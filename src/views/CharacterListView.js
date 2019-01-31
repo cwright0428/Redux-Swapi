@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { getChars } from "../actions";
-
+import { charsReducer } from '../reducers/starWarsReducer';
 import { CharacterList } from "../components";
 // import actions
 
@@ -44,8 +44,9 @@ class CharacterListView extends React.Component {
   }
 }
 const mapStateToProps = state => ({
-  characters: state.characters,
-  isFetching: state.isFetching
+  characters: state.charsReducer.characters,
+  isFetching: state.charsReducer.isFetching,
+
 });
 // our mapStateToProps needs to have two properties inherited from state
 // the characters and the fetching boolean
